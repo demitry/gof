@@ -1,0 +1,41 @@
+﻿@model ContactManagerApp.Core.Contact
+
+
+<html>
+   <head>
+       <title>@ViewBag.Title</title>
+   </head>
+    <body>
+        <h1>Add New Contact</h1>
+        <a asp-action="Index" asp-controller="Home">Go Back</a>
+        <br /><br />
+        <form asp-controller="Home" asp-action="AddContact" method="post">
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td><label asp-for="FirstName">First Name :</label></td>
+                    <td><input type="text" asp-for="FirstName" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="LastName">Last Name :</label></td>
+                    <td><input type="text" asp-for="LastName" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Email">Email :</label></td>
+                    <td><input type="text" asp-for="Email" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Phone">Phone :</label></td>
+                    <td><input type="text" asp-for="Phone" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <strong>@ViewBag.Message</strong>
+        <div asp-validation-summary="All"></div>
+
+    </body>
+</html>
